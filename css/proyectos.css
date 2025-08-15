@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--primary-color);
+}
+
+#main {
+  min-height: 100vh;
+  scroll-margin-top: 100px;
+}
+
+.galery__container div {
+  width: 100%;
+  transition: all 1s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 20px;
+
+}
+
+.galery__container div img {
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 1s ease;
+}
+
+.galery__container:hover div img {
+  opacity: 0.5;
+  transition: opacity .3s ease;
+}
+
+.galery__container div:hover img {
+  opacity: 1;
+}
+
+.galery__container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 40px;
+}
+
+.galery__container .content__reverse {
+  position: absolute;
+  background-color: #a3d39c;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  visibility: hidden;
+  transition: all .2s ease;
+  opacity: 0;
+  transform: scale(1);
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 1s ease;
+}
+
+.galery__container .content__reverse h2 {
+  margin: 10px 0;
+  padding: 0;
+  color: #f25c54;
+  text-align: center;
+}
+
+.galery__container .content__reverse p {
+  color: #4d4d4d;
+}
+
+.galery__container .content__reverse a {
+  text-decoration: none;
+  margin-top: 50px;
+  background-color: #f25c54;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.galery__container div:hover .content__reverse {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(0.9);
+}
